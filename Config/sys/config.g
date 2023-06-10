@@ -30,15 +30,11 @@ M569 P4 S1                                              ; physical drive 4 goes 
 M569 P5 S0                                              ; physical drive 5 goes forwards using default driver timings
 M569 P6 S1                                              ; physical drive 6 goes forwards using default driver timings
 M350 X16 Y16 Z16 E16 I1                                 ; configure microstepping with interpolation
-M92 X80.00 Y80.00 Z400.00                               ; set steps per mm
-M92 E417.00                                             ; Stock steps per mm
-;M92 E710.00                                            ; SB steps per mm. Uncomment if using Formbot SB kit and comment out line above
+M92 X80.00 Y80.00 Z400.00 E417.00                       ; set steps per mm
 M566 X600 Y600 Z600 E600                                ; maximum instantaneous speed changes (mm/min) (jerk)
 M203 X30000 Y30000 Z4000 E5000                          ; maximum speeds (mm/min)
 M201 X2000 Y2000 Z650 E3200	                            ; accelerations
-M906 X1600 Y1600 Z1600 I30                              ; set motor currents (mA) and motor idle factor in per cent
-M906 E640                                               ; Stock motor current
-;M906 E800                                              ; SB Motor Current. Uncomment if using Formbot SB kit and comment out line above
+M906 X1600 Y1600 Z1600 E800 I30                         ; set motor currents (mA) and motor idle factor in per cent
 M84 S30                                                 ; Set idle timeout
 
 ;#################### Axis Limits #######################
@@ -52,12 +48,14 @@ M574 Y2 S1 P"ystop"                                     ; configure switch-type 
 
 ;#################### Print Head Probe ##################
 M558 K0 P5 C"probe" T12000 F300:120 H10 A10 S0.01       ; configure the probe on the print head
-G31 K0 P500 X0 Y25 Z3                                   ; set Z probe X, Y and Z offsets
+;G31 K0 P500 X0 Y25 Z5                                   ; set Z probe X, Y and Z offsets
+G31 K0 P500 X0 Y18 Z8  
 M557 X35:310 Y35:310 S55                                ; define mesh grid
 
 ;#################### Nozzle Probe ######################
-M558 K1 P8 C"zstop" T18000 F180 H5 A10 S0.0025 R0       ; configure the probe used by autoz
-G31 K1 P500 X0 Y0 Z3                                    ; set autoZ probe X, Y and Z offsets
+;M558 K1 P8 C"zstop" I0 H2 R0.1 F240:120 T6000 A30 S0.0025
+;M558 K1 P8 C"zstop" T18000 F180 H5 A10 S0.0025 R0       ; configure the probe used by autoz
+;G31 K1 P500 X0 Y0 Z0                                    ; set autoZ probe X, Y and Z offsets
 
 ;#################### Heaters ###########################
 M308 S0 P"bedtemp" Y"thermistor" T100000 B3950          ; configure sensor 0 as thermistor on pin bedtemp

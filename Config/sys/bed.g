@@ -5,6 +5,8 @@ G29 S2                                                                          
 M561                                                                              ; clear any bed transform
 M290 R0 S0                                                                        ; clear babystepping
 G28 Z			                                                                  ; home z
+M98 P"/macros/Klicky/zprobe/clicky_status.g"
+M98 P"/macros/Klicky/zprobe/loadclicky.g"
 M558 K0 H10                                                                       ; set toolhead probe dive height to 10mm
 G30 P0 X30 Y50 Z-99999                                                             ; probe front left
 G30 P1 X30 Y320 Z-99999                                                            ; prove back left

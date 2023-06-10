@@ -60,3 +60,6 @@ else
 	M568 P0 S{global.slicerHotendTempOverride} A2							    ; set hotend temperature to the override temperature set in btncmd instead
 M116 P0                                                                     ; wait for this temperature to be reached
 M98 P"Nozzle-clean.g"														; clean nozzle
+
+if global.clicky_status = "attached"
+	M98 P"/macros/Klicky/zprobe/unloadclicky.g"

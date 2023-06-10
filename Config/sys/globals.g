@@ -28,3 +28,5 @@ if !exists(global.generateMesh)												; checks for the existence of global.
 	global generateMesh = false												; if it doesn't exist, set the value to false
 if !exists(global.generatePrintOnlyMesh)									; checks for the existence of global.generatePrintOnlyMesh
 	global generatePrintOnlyMesh = false									; if it doesn't exist, set the value to false
+if !exists(global.clicky_status)
+	global clicky_status = "none"
