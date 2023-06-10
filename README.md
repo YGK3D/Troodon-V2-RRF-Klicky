@@ -2,7 +2,9 @@
 
 This set of config files assumes that the firmware has been updated to at least 3.4.5.
 
-**WARNING** When using this config, please delete the 2 G31 lines out of your config-override.g and reboot. Then run AutoZ. By default, this is configured for PCB Klicky and the Afterburner toolhead. For DIY Klicky or Stealthburner, the dock position and z endstop position may need to be adjusted.
+**WARNING** When using this config, please delete the 2 G31 lines out of your config-override.g and reboot. Then run AutoZ. 
+
+By default, this is configured for PCB Klicky and the Afterburner toolhead. For DIY Klicky or Stealthburner, the dock position and z endstop position may need to be adjusted.
 
 # Changelog
 
