@@ -6,6 +6,9 @@ This set of config files assumes that the firmware has been updated to at least 
 
 # Changelog
 
+# Version 1.6.2 - Klicky
+* Added support for Klicky probe and Klicky Auto Z
+
 # Version 1.6.2
 *config.g reduce stock motor current as its currently at max rather than 80% of max (thanks ygk3d)
 
