@@ -1,4 +1,4 @@
-# Troodon-V2 Updated Config
+# Troodon-V2 Klicky Config
 
 This set of config files assumes that the firmware has been updated to at least 3.4.5.
 
